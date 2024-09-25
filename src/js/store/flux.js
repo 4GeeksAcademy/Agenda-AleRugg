@@ -12,6 +12,50 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
+			],
+			contacts: [
+				{
+					name: "string",
+					phone: "string",
+					email: "string",
+					address: "string",
+					id: 0
+				},
+				{
+					name: "string",
+					phone: "string",
+					email: "string",
+					address: "string",
+					id: 0
+				},
+				{
+					name: "string",
+					phone: "string",
+					email: "string",
+					address: "string",
+					id: 0
+				},
+				{
+					name: "string",
+					phone: "string",
+					email: "string",
+					address: "string",
+					id: 0
+				},
+				{
+					name: "string",
+					phone: "string",
+					email: "string",
+					address: "string",
+					id: 0
+				},
+				{
+					name: "string",
+					phone: "string",
+					email: "string",
+					address: "string",
+					id: 0
+				}
 			]
 		},
 		actions: {
