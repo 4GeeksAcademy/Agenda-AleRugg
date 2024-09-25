@@ -6,6 +6,7 @@ import "../../styles/addContacts.css";
 
 const AddContacts = () => {
     const { store, actions } = useContext(Context);
+    
 
         return (
 <>

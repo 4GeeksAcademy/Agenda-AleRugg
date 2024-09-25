@@ -15,45 +15,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			contacts: [
 				{
-					name: "string",
-					phone: "string",
-					email: "string",
-					address: "string",
-					id: 0
-				},
-				{
-					name: "string",
-					phone: "string",
-					email: "string",
-					address: "string",
-					id: 0
-				},
-				{
-					name: "string",
-					phone: "string",
-					email: "string",
-					address: "string",
-					id: 0
-				},
-				{
-					name: "string",
-					phone: "string",
-					email: "string",
-					address: "string",
-					id: 0
-				},
-				{
-					name: "string",
-					phone: "string",
-					email: "string",
-					address: "string",
-					id: 0
-				},
-				{
-					name: "string",
-					phone: "string",
-					email: "string",
-					address: "string",
+					name: "Alejandro Ruggeri",
+					phone: "664149400",
+					email: "alejandro.ruggeri.l@gmail.com",
+					address: "Avenida Raul Leoni",
 					id: 0
 				}
 			]
