@@ -1,8 +1,43 @@
-.cardsWrapper {
+.buttons{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
 
 }
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons{
+cursor: pointer;
+margin: 10px;
+font-size: x-large;
+}
+
+.contacts {
+    background-color: black;
+    color: aliceblue;
+    margin: 10px;
+    border-radius: 10px;
+    width: 50vh;
+
+    
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.card-text{
+    margin-right: 10px;
+}
+
+
+
+
 

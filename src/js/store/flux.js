@@ -14,13 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			contacts: [
-				{
-					name: "Alejandro Ruggeri",
-					phone: "664149400",
-					email: "alejandro.ruggeri.l@gmail.com",
-					address: "Avenida Raul Leoni",
-					id: 0
-				}
+		
 			]
 		},
 		actions: {
