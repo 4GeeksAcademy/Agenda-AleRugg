@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			contacts: [
-		
+							// aqui se volcaran los contactos de la agenda desde la API
 			]
 		},
 		actions: {
@@ -26,6 +26,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+			},
+			fetchSingleAgenda: () => {
+				const requestOptions = {
+					method: "GET",
+				};
+		
+				fetch(`https://playground.4geeks.com/contact/agendas/${slug}`, requestOptions) // no funciona aun desde aqui 
+					.then((response) => response.json())
+					.then((result) => {
+						setUserAgenda(result.contacts);
+						store.contacts = result.contacts
+					})
+					.catch((error) => console.error(error));
 			},
 			changeColor: (index, color) => {
 				//get the store

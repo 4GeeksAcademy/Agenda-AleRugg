@@ -1,0 +1,10 @@
+.btn1{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:  0.8px 0.8px gold;
+    margin-top: 150px;
+}
+

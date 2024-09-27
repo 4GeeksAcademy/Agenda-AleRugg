@@ -17,7 +17,7 @@ font-size: x-large;
 }
 
 .contacts {
-    background-color: black;
+    background-color: rgba(80, 3, 3, 0.699);
     color: aliceblue;
     margin: 10px;
     border-radius: 10px;
