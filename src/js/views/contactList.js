@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "/workspaces/Agenda-AleRugg/src/styles/contactList.css"
-
-
-
 import { Context } from "../store/appContext";
 import { HiArchiveBoxXMark } from "react-icons/hi2";
 import { CiEdit } from "react-icons/ci";
@@ -12,33 +9,12 @@ const slug = "AleRugg"
 
 const ContactList = () => {
   const { store, actions } = useContext(Context);
-  const [userAgenda, setUserAgenda] = useState([]);
-
-  const getContacts = () => {
-
-    const requestOptions = {
-      method: "GET",
-    };
-
-    fetch(`https://playground.4geeks.com/contact/agendas/${slug}`, requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        setUserAgenda(result.contacts);
-        store.contacts = result.contacts
-      })
-      .catch((error) => console.error(error));
-  }
-
 
   useEffect(() => {
-    getContacts()
+    actions.getAgendaContacts()
+  }, [])
 
-  }, [store.contact])
 
-  // useEffect(() => {
-
-  //     console.log(userAgenda) // este efecto sera para probar que los estados tengan los valores esperados 
-  // },)
 
   const inputHandler = (e) => {
     setInputValue(e.target.value);
@@ -51,34 +27,7 @@ const ContactList = () => {
     }
   };
 
-  const deleteContact = (id) => {
-    const newContact = userAgenda.filter((contact) => contact.id !== id); // borrar articulos de la lista
-    fetchDeleteContact(id)
-    console.log(id);
-    setUserAgenda(newContact);
-  };
-
-  const fetchDeleteContact = (id) => {
-
-    const myHeaders = new Headers();
-    myHeaders.append("accept", "application/json");
-
-    const requestOptions = {
-      method: "DELETE",
-      headers: myHeaders,
-    };
-
-    fetch(`https://playground.4geeks.com/contact/agendas/${slug}/contacts/${id}`, requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
-  }
-
-  useEffect(() => {
-    getContacts()
-  }, [store.contacts])
-
-
+  
 
   return (
 
@@ -99,7 +48,7 @@ const ContactList = () => {
                   </ul>
                 </div>
                 <div className="buttons">
-                  <HiArchiveBoxXMark className="buttons" onClick={() => deleteContact(item.id)} />
+                  <HiArchiveBoxXMark className="buttons" onClick={() => actions.fetchDeleteContact(item.id)} />
                   <CiEdit className="buttons" />
                 </div>
               </div>

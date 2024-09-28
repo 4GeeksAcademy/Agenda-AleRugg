@@ -40,21 +40,21 @@ const AddContacts = () => {
   }
 
   const nameInputHandler = (e) => {
-    // setNameInputValue(e.target.value);
-    console.log(e)
+    setNameInputValue(e.target.value);
+   
   };
 
   const phoneInputHandler = (e) => {
     setPhoneInputValue(e.target.value);
-    console.log(e.target.value)
+
   };
   const addressInputHandler = (e) => {
     setAddressInputValue(e.target.value);
-    console.log(e.target.value)
+  
   };
   const emailInputHandler = (e) => {
     setEmailInputValue(e.target.value);
-    console.log(e.target.value)
+   
   };
 
   const contactCreator = (e) => {
@@ -79,7 +79,7 @@ const AddContacts = () => {
             </div>
           </div>
           <div data-mdb-input-init className="form-outline mb-4">
-            <input placeholder="Address" type="text" id="form6Example3" className="form-control" key={addressInputValue} onChange={(e)=> addressInputHandler(e)}/>
+            <input placeholder="Address" type="text" id="form6Example3" className="form-control" value={addressInputValue} onChange={(e)=> addressInputHandler(e)}/>
           </div>
           <div data-mdb-input-init className="form-outline mb-4">
             <input placeholder="PhoneNumber" type="number" id="form6Example4" className="form-control" value={phoneInputValue} onChange={(e)=> phoneInputHandler(e)}/>

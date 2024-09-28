@@ -27,19 +27,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
-			fetchSingleAgenda: () => {
+			getAgendaContacts: () => {
+				const slug = "AleRugg";
 				const requestOptions = {
 					method: "GET",
 				};
 		
 				fetch(`https://playground.4geeks.com/contact/agendas/${slug}`, requestOptions) // no funciona aun desde aqui 
 					.then((response) => response.json())
-					.then((result) => {
-						setUserAgenda(result.contacts);
-						store.contacts = result.contacts
+					.then((result) => { console.log(result);
+						setStore({contacts: result.contacts});
 					})
 					.catch((error) => console.error(error));
 			},
+			 fetchDeleteContact:  (id) => {
+				const slug = "AleRugg";
+				const {contacts} = getStore()
+				const newContact = contacts.filter((contact) => contact.id !== id); // borrar articulos de la lista	
+							
+				const myHeaders = new Headers();
+				myHeaders.append("accept", "application/json");
+							
+				const requestOptions = {
+				  method: "DELETE",
+				  headers: myHeaders,
+				};
+			
+				fetch(`https://playground.4geeks.com/contact/agendas/${slug}/contacts/${id}`, requestOptions)				
+				  .then(() => { 
+					setStore({contacts: newContact})
+				})
+				  .catch((error) => console.error(error));
+			  },
+			
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
