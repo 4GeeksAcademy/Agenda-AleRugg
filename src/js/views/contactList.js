@@ -4,32 +4,21 @@ import "/workspaces/Agenda-AleRugg/src/styles/contactList.css"
 import { Context } from "../store/appContext";
 import { HiArchiveBoxXMark } from "react-icons/hi2";
 import { CiEdit } from "react-icons/ci";
+import { Modal } from "./editContactsModal";
 
 const slug = "AleRugg"
 
 const ContactList = () => {
   const { store, actions } = useContext(Context);
+ 
 
   useEffect(() => {
     actions.getAgendaContacts()
   }, [])
-
-
-
-  const inputHandler = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handlerKeyDown = (e) => {
-    if (e.key === "Enter" && inputValue !== "") {
-      createToDo();
-      setInputValue(""); // Limpia el input despues de la interaccion 
-    }
-  };
-
   
 
   return (
+    
 
     <div className="container">
       <h1 className="text-white">Contactos en la agenda:</h1>
@@ -49,13 +38,20 @@ const ContactList = () => {
                 </div>
                 <div className="buttons">
                   <HiArchiveBoxXMark className="buttons" onClick={() => actions.fetchDeleteContact(item.id)} />
-                  <CiEdit className="buttons" />
+                  <Link to={`/editContactsModal/${item.id}`}>
+                    <CiEdit  data-mdb-button-init data-mdb-ripple-init className="buttons" data-mdb-modal-init data-mdb-target="#staticBackdrop2"  />
+				          </Link>
                 </div>
               </div>
+
             </div>
           )
         })}
       </div>
+      {/* // <!-- Button trigger modal --> */}
+{/* <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary" data-mdb-modal-init data-mdb-target={Modal}>
+    Launch modal register form
+</button> */}
     </div>
   )
 }

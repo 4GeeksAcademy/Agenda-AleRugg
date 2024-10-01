@@ -1,0 +1,16 @@
+.loginContainer{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   margin-top: 18px;
+}
+
+.createInput{
+   padding: 20px;
+   border-radius: 10px;
+}
+
+.createButton{
+    border-radius: 10px;
+    width: 120px;
+}
