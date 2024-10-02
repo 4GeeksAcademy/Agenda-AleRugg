@@ -68,7 +68,7 @@ const Modal = () => {
                     <div className="modal-dialog d-flex justify-content-center" style={{ marginTop: '10%' }}>
                         <div className="modal-content w-75">
                             <div className="modal-header">
-                                <h5 className="modal-title">Sign up</h5>
+                                <h5 className="modal-title">Edit Contact</h5>
                                 <Link to={"/contactList/"}>
                                 <button type="button" className="btn-close"  aria-label="Close"></button>
 				                </Link>
@@ -96,7 +96,7 @@ const Modal = () => {
                                         <input type="text" id="phone1" className="form-control" value={phoneInputValue} onChange={(e) => phoneInputHandler(e)} />
                                         <label className="form-label" htmlFor="phone1">Phone</label>
                                     </div>
-                                    <button type="submit" className="btn btn-primary btn-block">Sign up</button>
+                                    <button type="submit" className="btn btn-danger btn-block">Edit</button>
                                 </form>
                             </div>
                         </div>
