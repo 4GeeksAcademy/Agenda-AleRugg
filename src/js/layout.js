@@ -10,6 +10,8 @@ import injectContext from "./store/appContext";
 import { AddContacts } from "./views/addContacts";
 import { CreateSlug } from "./views/createSlug";
 import { Modal } from "./views/editContactsModal";
+import { DeleteContactModal } from "./views/deleteContactModal";
+import { SingleContact } from "./views/singleContact";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -31,7 +33,9 @@ const Layout = () => {
 						<Route path="/contactList" element={<ContactList />} />
 						<Route path="/editContactsModal/:id" element={<Modal />} />
 						<Route path="/addContacts" element={<AddContacts />} />
+						<Route path="/deleteContactModal" element={<DeleteContactModal />} />
 						<Route path="/createSlug" element={<CreateSlug />} />
+						<Route path="/singleContact/:contactId" element={<SingleContact />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>

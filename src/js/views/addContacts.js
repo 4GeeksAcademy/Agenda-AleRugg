@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 import "../../styles/addContacts.css";
 
 const AddContacts = () => {
-  const { store, actions } = useContext(Context);
+  const { actions } = useContext(Context);
   const [nameInputValue, setNameInputValue] = useState([]);
   const [phoneInputValue, setPhoneInputValue] = useState([]);
   const [addressInputValue, setAddressInputValue] = useState([]);
@@ -28,9 +28,29 @@ const addressInputHandler= (e) => {
 //maneja el input del email
 const emailInputHandler= (e) => {
     setEmailInputValue( e.target.value );
+   
     console.log(e.target.value)
 
 };
+
+const clearInputs = () => {
+  setNameInputValue("");
+  setPhoneInputValue("");
+  setEmailInputValue("");
+  setAddressInputValue("") // Pone en blanco los inputs
+}
+
+const handleClick = () => {
+  if(
+    nameInputValue &&  phoneInputValue && emailInputValue && addressInputValue !== ""
+  )
+  {  actions.fetchCreateContact(nameInputValue, addressInputValue, phoneInputValue, emailInputValue);
+    clearInputs()
+  }
+
+}
+
+
 
   return (
     <>
@@ -51,19 +71,15 @@ const emailInputHandler= (e) => {
             <input placeholder="PhoneNumber" type="number" id="form6Example4" className="form-control"   value={phoneInputValue}  onChange={(e)=> phoneInputHandler(e)}/>
           </div>
           <div data-mdb-input-init className="form-outline mb-4">
-            <input placeholder="Email" type="email" id="form6Example5" className="form-control"  value={emailInputValue}  onChange={(e)=> emailInputHandler(e)}/>
+            <input placeholder="Email" type="email"  id="form6Example5" className="form-control"  value={emailInputValue}  onChange={(e)=> emailInputHandler(e)}/>
           </div>
           <div className="d-flex justify-content-center">
-          <button data-mdb-ripple-init type="button" className="btn btn-danger btn-block m-5" onClick={()=> actions.fetchCreateContact(nameInputValue, addressInputValue, phoneInputValue, emailInputValue)}>Crea un contacto nuevo</button>
+          <button data-mdb-ripple-init type="button" className="btn btn-danger btn-block m-5" onClick={()=> handleClick()}>Crea un contacto nuevo</button>
           </div>
         </form>
       </div>
     </>
   )
 }
-
-
-
-
 
 export { AddContacts }

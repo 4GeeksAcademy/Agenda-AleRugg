@@ -46,15 +46,13 @@ const Modal = () => {
     };
     //maneja el input del email
     const emailInputHandler= (e) => {
-        setEmailInputValue( e.target.value );
-     
+        setEmailInputValue( e.target.value );    
 
-    };
+    };   
     
 
     return (
         <>
-           // Solo renderiza si isModalOpen es true
                 <div className="modal" style={{
                     display: 'block',
                     backgroundColor: 'rgba(0, 0, 0, 0.5)',
