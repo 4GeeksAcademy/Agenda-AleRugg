@@ -4,6 +4,7 @@ import "/workspaces/Agenda-AleRugg/src/styles/contactList.css"
 import { Context } from "../store/appContext";
 import { HiArchiveBoxXMark } from "react-icons/hi2";
 import { CiEdit } from "react-icons/ci";
+import { useParams } from "react-router";
 // Initialization for ES Users
 
 

@@ -131,7 +131,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 
 				fetch(`https://playground.4geeks.com/contact/agendas/${slug}`, requestOptions)
-					.then((response) => response.jason())
+					.then((response) => response.json())
 					.then((result) => 
 						setStore({ slug: [...store.slug, result] })
 						
